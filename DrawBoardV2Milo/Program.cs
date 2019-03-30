@@ -33,7 +33,7 @@ namespace DrawBoardV2Milo
         /* I really like the way you have simplified the entire draw board challenge. 
          * But one of the ways you could change the code is objectifying the whole code to separate the static DrawBoard
          * into a separate class and include your drawTop, drawWalls, drawBottom methods inside the class.
-         * This will help in code reusability and implementing C# concepts for further usage.*/
+         * This will help in code reusability and implementing  OOPS concepts for further usage.*/
          
         private static void DrawBoard(int height, int width)
         {

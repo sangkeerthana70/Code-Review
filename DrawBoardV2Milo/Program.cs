@@ -30,7 +30,7 @@ namespace DrawBoardV2Milo
                 Console.WriteLine("Please enter a valid width");
             }
 
-            Game myGame = new Game(height, width);
+            GameBoard myGame = new GameBoard(height, width);
             myGame.DrawBoard(height, width);
         }
 

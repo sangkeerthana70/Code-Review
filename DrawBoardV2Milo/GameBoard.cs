@@ -8,12 +8,12 @@ using static System.Console;
 
 namespace DrawBoardV2Milo
 {
-    public class Game
+    public class GameBoard
     {
         int height;
         int width;
 
-        public Game(int h, int w)
+        public GameBoard(int h, int w)
         {
             this.height = h;
             this.width = w;

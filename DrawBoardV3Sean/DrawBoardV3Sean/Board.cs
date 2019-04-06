@@ -34,12 +34,13 @@ namespace DrawBoardV3Sean
                         if (horz == width)
                         {
                             Console.Write(wall + space);
+                            //Console.WriteLine("horz = {0}; vert = {1}; moves = {2}", horz, vert, moves[vert / 2, horz / 2]);
                         }
                         else
                         {
                             Console.Write(wall + moves[vert / 2, horz / 2]);
+                            //Console.WriteLine("horz = {0}; vert = {1}; moves = {2}", horz, vert, moves[vert / 2, horz / 2]);
                         }
-
                     }
                 }
                 Console.WriteLine();

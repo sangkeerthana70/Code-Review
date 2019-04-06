@@ -14,7 +14,7 @@ namespace DrawBoardV3Sean
         String plus = parts[2];
         String dash = parts[3];
 
-        public void BuildBoard(int height, int width)
+        public void BuildBoard(int height, int width, int[,] moves)
         {
             for (var vert = 0; vert <= height * 2; vert++)
             {
@@ -31,7 +31,15 @@ namespace DrawBoardV3Sean
                     }
                     else
                     {
-                        Console.Write(wall + space);
+                        if (horz == width)
+                        {
+                            Console.Write(wall + space);
+                        }
+                        else
+                        {
+                            Console.Write(wall + moves[vert / 2, horz / 2]);
+                        }
+
                     }
                 }
                 Console.WriteLine();

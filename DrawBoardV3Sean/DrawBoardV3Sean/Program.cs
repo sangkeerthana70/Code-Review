@@ -22,6 +22,8 @@ namespace DrawBoardV3Sean
             Game game = new Game(0, 1, 2);
             
             board.BuildBoard(rows, columns, game.GameMoves(rows, columns));
+            //game.ApplyMoves(rows, columns);
+            board.BuildBoard(rows, columns, game.ApplyMoves(rows, columns));
         }
     }
 }

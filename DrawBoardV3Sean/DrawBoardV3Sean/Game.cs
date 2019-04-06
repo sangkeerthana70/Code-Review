@@ -45,13 +45,17 @@ namespace DrawBoardV3Sean
         {
             Console.WriteLine("in apply moves");
             int[,] oneMove = new int[height, width];
-            
-            
+
+            int firstDimension = oneMove.GetLength(0);
+            Console.WriteLine(firstDimension);
+            int secondDimension = oneMove.GetLength(1);
+            Console.WriteLine(secondDimension);
+
             for (int row = 0; row < oneMove.GetLength(0); row++)
             {
                 for (int col = 0; col < oneMove.GetLength(1); col++)
                 {
-                    if(row == height -1 && col == width - 2)
+                    if((row == firstDimension -1) && (col == secondDimension - 2))
                     {
                         oneMove[row, col] = player1;
                         Console.WriteLine("oneMove[{0},{1}] = {2}", row, col, oneMove[row, col]);

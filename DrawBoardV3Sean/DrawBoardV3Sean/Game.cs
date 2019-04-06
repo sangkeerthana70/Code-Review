@@ -11,7 +11,7 @@ namespace DrawBoardV3Sean
         int emptyState;
         int player1;
         int player2;
-        
+
 
         public Game(int s, int p1, int p2)
         {
@@ -20,7 +20,7 @@ namespace DrawBoardV3Sean
             this.player2 = 2;
         }
 
-       
+
 
         public int[,] GameMoves(int height, int width)
         {
@@ -33,13 +33,21 @@ namespace DrawBoardV3Sean
                 {
 
                     moves[row, col] = es;
-                    Console.WriteLine("GameMoves[{0},{1}] = {2}", row, col, moves[row, col]);
-                    
+                    Console.WriteLine("moves[{0},{1}] = {2}", row, col, moves[row, col]);
+
                 }
             }
             //Console.ReadKey();
 
             return moves;
+        }
+
+        public void ApplyMove()
+        {
+            if (emptyState != 0 && player1 == 1) 
+            {
+                
+            }
         }
     }   
 }

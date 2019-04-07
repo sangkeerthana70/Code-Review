@@ -18,12 +18,14 @@ namespace DrawBoardV3Sean
             Console.WriteLine("select amount of columns");
             int columns = Convert.ToInt32(Console.ReadLine());
 
-            Board board = new Board();
-            Game game = new Game(0, 1, 2);
+            Game game = new Game(6, 7, 'x', 'o');
+            game.PrintGameState();
+
+            game.ApplyMove(game.player1, 1);
+            game.PrintGameState();
             
-            board.BuildBoard(rows, columns, game.GameMoves(rows, columns));
-            //game.ApplyMoves(rows, columns);
-            board.BuildBoard(rows, columns, game.ApplyMoves(rows, columns));
+
+
         }
     }
 }

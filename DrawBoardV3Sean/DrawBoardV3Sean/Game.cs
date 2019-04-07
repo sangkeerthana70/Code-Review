@@ -8,69 +8,49 @@ namespace DrawBoardV3Sean
 {
     class Game
     {
-        int emptyState;
-        int player1;
-        int player2;
+        public char[,] GameState;
+        public char player1;
+        public char player2;
 
 
-        public Game(int s, int p1, int p2)
+        public Game(int r, int c, char p1, char p2)
         {
-            this.emptyState = 0;
-            this.player1 = 1;
-            this.player2 = 2;
-        }
-
-
-
-        public int[,] GameMoves(int height, int width)
-        {
-            int[,] moves = new int[height, width];
-            
-           
-            for (int row = 0; row < moves.GetLength(0); row++)
+            this.player1 = p1;
+            this.player2 = p2;
+            this.GameState = new char[r, c];
+            for (int i = 0; i < r; i++)
             {
-                for (int col = 0; col < moves.GetLength(1); col++)
+                for (int j = 0; j < c; j++)
                 {
-
-                    moves[row, col] = emptyState;
-                    Console.WriteLine("moves[{0},{1}] = {2}", row, col, moves[row, col]);
-
+                    GameState[i, j] = '.';
                 }
             }
-            return moves;
         }
 
-
-        public int[,]  ApplyMoves(int height, int width)
+        public void PrintGameState()
         {
-            Console.WriteLine("in apply moves");
-            int[,] oneMove = new int[height, width];
-
-            int firstDimension = oneMove.GetLength(0);
-            Console.WriteLine(firstDimension);
-            int secondDimension = oneMove.GetLength(1);
-            Console.WriteLine(secondDimension);
-
-            for (int row = 0; row < oneMove.GetLength(0); row++)
+            for (int i = 0; i < GameState.GetLength(0); i++)
             {
-                for (int col = 0; col < oneMove.GetLength(1); col++)
+                for (int j = 0; j < GameState.GetLength(1); j++)
                 {
-                    if((row == firstDimension -1) && (col == secondDimension - 2))
-                    {
-                        oneMove[row, col] = player1;
-                        Console.WriteLine("oneMove[{0},{1}] = {2}", row, col, oneMove[row, col]);
-                    }
-                    else
-                    {
-                        oneMove[row, col] = emptyState;
-                        Console.WriteLine("oneMove[{0},{1}] = {2}", row, col, oneMove[row, col]);
-                    }
-     
+                    Console.Write(GameState[i, j]);
                 }
+                Console.WriteLine();
             }
-            
+            Console.WriteLine();
 
-            return oneMove;
+        }
+
+        public void ApplyMove(char p, int c)
+        {
+            int j;
+            for (j = 0; j < GameState.GetLength(0); j++)
+            {
+                if (GameState[j,c] != '.') break;
+            }
+            Console.WriteLine("j = {0}; c = {1}",j,c);
+            this.GameState[j-1,c] = p;
+
         }
 
 

@@ -14,7 +14,7 @@ namespace DrawBoardV3Sean
         String plus = parts[2];
         String dash = parts[3];
 
-        public void BuildBoard(int height, int width, int[,] moves)
+        public void BuildBoard(int height, int width, char[,] moves)
         {
             for (var vert = 0; vert <= height * 2; vert++)
             {

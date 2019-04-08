@@ -42,32 +42,53 @@ namespace DrawBoardV4Suerekha
         //}
 
 
-        int player1 = 1;
-        int player2 = 2;
-        int emptyCell = 0;
+        public char player1;
+        public char player2;
+        public char[,] GameState;
+       
 
-        public Game(int player1, int player2, int emptyCell)
+        public Game(int r, int c, char p1, char p2)
         {
-            this.player1 = player1;
-            this.player2 = player2;
-            this.emptyCell = emptyCell;
-        }
-
-
-        int[,] storeData = new int[7, 6];
-
-        public int[,] applyMove(int[,] storeData)
-        {
-            for (int i = 0; i < storeData.GetLength(0); i++)
+            this.player1 = p1;
+            this.player2 = p2;
+            this.GameState = new char[r, c];
+            for (int i = 0; i < r; i++)
             {
-                for (int j = 0; j < storeData.GetLength(1); j++)
+                for (int j = 0; j < c; j++)
                 {
-                    storeData[i, j] = 0;
-                    //Console.WriteLine("storeData[{0}, {1}] = {2}", i, j, storeData[i, j]);
+                    GameState[i, j] = '.';
                 }
             }
-            return storeData;
         }
 
+
+       
+        public void PrintGameState()
+        {
+            for (int i = 0; i < GameState.GetLength(0); i++)
+            {
+                for (int j = 0; j < GameState.GetLength(1); j++)
+                {
+                    Console.Write(GameState[i, j]);
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+
+        }
+
+        // represents the player and the column they intend to drop the chip
+        public void ApplyMove(char p, int c)
+        {
+            Console.WriteLine("in apply move");
+            int j;
+            for (j = 0; j < GameState.GetLength(0); j++)
+            {
+                if (GameState[j, c] != '.') break;
+            }
+            Console.WriteLine("j = {0}; c = {1}", j, c);
+            this.GameState[j - 1, c] = p;
+
+        }
     }
 }

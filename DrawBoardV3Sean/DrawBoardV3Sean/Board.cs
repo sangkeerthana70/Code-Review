@@ -16,14 +16,14 @@ namespace DrawBoardV3Sean
 
         public void BuildBoard(int height, int width, char[,] moves)
         {
-            for (var vert = 0; vert <= height * 2; vert++)
+            for (var row = 0; row <= height * 2; row++)
             {
-                for (var horz = 0; horz <= width; horz++)
+                for (var col = 0; col <= width; col++)
                 {
-                    if (vert % 2 == 0)
+                    if (row % 2 == 0)
                     {
                         Console.Write(plus + dash);
-                        if (horz == width - 1)
+                        if (col == width - 1)
                         {
                             Console.Write(plus + space);
                             break;
@@ -31,15 +31,15 @@ namespace DrawBoardV3Sean
                     }
                     else
                     {
-                        if (horz == width)
+                        if (col == width)
                         {
                             Console.Write(wall + space);
                             //Console.WriteLine("horz = {0}; vert = {1}; moves = {2}", horz, vert, moves[vert / 2, horz / 2]);
                         }
                         else
                         {
-                            Console.Write(wall + moves[vert / 2, horz / 2]);
-                            //Console.WriteLine("horz = {0}; vert = {1}; moves = {2}", horz, vert, moves[vert / 2, horz / 2]);
+                            Console.Write(wall + moves[row / 2, col]);
+                            //Console.WriteLine("row = {0}; col = {1}; moves = {2}", row, col, moves[row / 2, col / 2]);
                         }
                     }
                 }
@@ -48,16 +48,5 @@ namespace DrawBoardV3Sean
             Console.WriteLine();
         }
     }
-
-    /*
-    class game
-    {
-        public char[,] GameMoves(int height, int width)
-        {
-            char[,] moves = new char[height, width];
-            return moves;
-        }
-    }
-    */
 }
 

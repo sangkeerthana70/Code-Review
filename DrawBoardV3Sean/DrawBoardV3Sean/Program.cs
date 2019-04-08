@@ -25,7 +25,14 @@ namespace DrawBoardV3Sean
             newBoard.BuildBoard(rows, columns);
 
             game.ApplyMove(game.player1, 1);
-            game.PrintGameState();
+
+            foreach(char i in game.GameState)
+            {
+                Console.Write("{0}", i);
+                
+            }
+            Console.WriteLine();
+            //game.PrintGameState();
 
  
 

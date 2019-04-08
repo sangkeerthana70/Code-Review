@@ -26,7 +26,7 @@ namespace DrawBoardV3Sean
                 }
             }
         }
-
+        
         public void PrintGameState()
         {
             for (int i = 0; i < GameState.GetLength(0); i++)
@@ -50,7 +50,8 @@ namespace DrawBoardV3Sean
                 if (GameState[j,c] != '.') break;
             }
             Console.WriteLine("j = {0}; c = {1}",j,c);
-            this.GameState[j-1,c] = p;
+            this.GameState[j - 1, c] = p;
+            //Console.WriteLine(this.GameState[j - 1, c] = p);
 
         }
 

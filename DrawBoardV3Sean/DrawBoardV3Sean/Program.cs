@@ -21,20 +21,13 @@ namespace DrawBoardV3Sean
             
 
             Game game = new Game(6, 7, 'x', 'o');
-            
-            game.PrintGameState();
-            newBoard.BuildBoard(rows, columns, game.GameState);
+           
+            newBoard.BuildBoard(rows, columns);
 
             game.ApplyMove(game.player1, 1);
             game.PrintGameState();
 
-            //game.ApplyMove(game.player2, 1);
-            //game.PrintGameState();
-
-            //game.ApplyMove(game.player1, 3);
-            //game.PrintGameState();
-
-            newBoard.BuildBoard(rows, columns, game.GameState);
+ 
 
 
         }

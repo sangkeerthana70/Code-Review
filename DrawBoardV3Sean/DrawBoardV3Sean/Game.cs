@@ -41,6 +41,7 @@ namespace DrawBoardV3Sean
 
         }
 
+        // represents the player and the column they intend to drop the chip
         public void ApplyMove(char p, int c)
         {
             int j;

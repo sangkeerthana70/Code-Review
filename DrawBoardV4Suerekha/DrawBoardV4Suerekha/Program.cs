@@ -12,10 +12,17 @@ namespace DrawBoardV4Suerekha
         {
             Board newBoard = new Board();
             newBoard.DrawGameBoard();
-            Game newGame = new Game(6, 7, 'x', 'o');
             
-            newGame.ApplyMove('x', 1);
-            
+            Game newGame = new Game(6, 7, 'X', 'O');
+
+            //newBoard.DrawGameBoard(newGame.GameState);
+            //newGame.PrintGameState();
+            //newGame.ApplyMove('X', 1);
+            //newGame.PrintGameState();
+            //newBoard.DrawGameBoard(newGame.GameState);
+            //newGame.ApplyMove('O', 1);
+            //newBoard.DrawGameBoard(newGame.GameState);
+
             foreach (var cell in newGame.GameState)
             {
                 Console.Write(cell);

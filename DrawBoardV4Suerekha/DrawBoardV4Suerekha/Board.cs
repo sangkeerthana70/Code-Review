@@ -20,13 +20,12 @@ namespace DrawBoardV4Suerekha
             HeightOfBoard = 6;
             Board[,] board = new Board[7, 6];
         }
-     
 
+        
         public void DrawBlankSpacesInCell()
         {
             for(int row = 1; row < WidthOfBoard; row++)
             {
-                
                 Console.Write("|     ");
             }
             Console.WriteLine("|     |");
@@ -43,14 +42,18 @@ namespace DrawBoardV4Suerekha
 
         public void DrawGameBoard()
         {
-            for(int column = 0; column < HeightOfBoard; column++)
+            Console.Write(" -----------------------------------------");
+            Console.WriteLine();
+           
+            for (int column = 0; column < HeightOfBoard; column++)
             {
-                
                 DrawBlankSpacesInCell();
                 DrawBlankSpacesInCell();
                 DrawBottomLinesOfCell();
+
             }
         }
+ 
     }
 
 }

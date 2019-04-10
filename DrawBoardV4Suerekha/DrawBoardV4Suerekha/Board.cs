@@ -27,6 +27,7 @@ namespace DrawBoardV4Suerekha
             int row;
             for(row = 1; row < WidthOfBoard; row++)
             {
+                // data[row - 1] is to print the move in the center of each grid
                 Console.Write("|  "+ data[row - 1] + "  ");
             }
             Console.WriteLine("|  " + data[row - 1] + "  |");
@@ -48,7 +49,7 @@ namespace DrawBoardV4Suerekha
 
             Console.Write(" -----------------------------------------");
             Console.WriteLine();
-            // populate the first row of grid with a single dimensional array
+            // populate the first row of the board matrix with a single dimensional array
             for(int firstRow = 0; firstRow < blanks.Length; firstRow++)
             {
                 blanks[firstRow] = ' ';
@@ -57,7 +58,7 @@ namespace DrawBoardV4Suerekha
             for (int column = 0; column < HeightOfBoard; column++)
             {
                 DrawBlankSpacesInCell(blanks);
-                // populate the board with the updated moves from the Game.ApplyMove()
+                // populate the second row with the updated moves from the Game.ApplyMove()
                 for(int secondRow = 0; secondRow < rowValue.Length; secondRow++)
                 {
                     rowValue[secondRow] = moves[column, secondRow];

@@ -17,9 +17,9 @@ namespace DrawBoardV4Suerekha
 
             newBoard.DrawGameBoard(newGame.GameState);
             newGame.PrintGameState();
-            //newGame.ApplyMove('X', 1);
-            //newGame.PrintGameState();
-            //newBoard.DrawGameBoard(newGame.GameState);
+            newGame.ApplyMove('X', 1);
+            newGame.PrintGameState();
+            newBoard.DrawGameBoard(newGame.GameState);
             //newGame.ApplyMove('O', 1);
             //newBoard.DrawGameBoard(newGame.GameState);
 

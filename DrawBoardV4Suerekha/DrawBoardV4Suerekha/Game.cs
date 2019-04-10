@@ -82,7 +82,7 @@ namespace DrawBoardV4Suerekha
         // represents the player and the column they intend to drop the chip
         public void ApplyMove(char p, int c)
         {
-            Console.WriteLine("in apply move");
+            //Console.WriteLine("in apply move");
             int j;
             for (j = 0; j < GameState.GetLength(0); j++)
             {

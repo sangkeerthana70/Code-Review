@@ -11,11 +11,11 @@ namespace DrawBoardV4Suerekha
         static void Main(string[] args)
         {
             Board newBoard = new Board();
-            newBoard.DrawGameBoard();
+            
 
             Game newGame = new Game(6, 7, 'X', 'O');
 
-            
+            newBoard.DrawGameBoard(newGame.GameState);
             newGame.PrintGameState();
             //newGame.ApplyMove('X', 1);
             //newGame.PrintGameState();

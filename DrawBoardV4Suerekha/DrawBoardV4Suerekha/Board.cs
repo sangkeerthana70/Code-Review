@@ -22,13 +22,14 @@ namespace DrawBoardV4Suerekha
         }
 
         
-        public void DrawBlankSpacesInCell()
+        public void DrawBlankSpacesInCell(char[] data)
         {
-            for(int row = 1; row < WidthOfBoard; row++)
+            int row;
+            for(row = 1; row < WidthOfBoard; row++)
             {
-                Console.Write("|     ");
+                Console.Write("|  "+ data[row - 1] + "  ");
             }
-            Console.WriteLine("|     |");
+            Console.WriteLine("|  " + data[row - 1] + "  |");
         }
 
         public void DrawBottomLinesOfCell()
@@ -40,15 +41,28 @@ namespace DrawBoardV4Suerekha
             Console.WriteLine("|_____|");
         }
 
-        public void DrawGameBoard()
+        public void DrawGameBoard(char[,] moves)
         {
+            char[] blanks = new char[7];
+            char[] rowValue = new char[7];
+
             Console.Write(" -----------------------------------------");
             Console.WriteLine();
-           
+            // populate the first row of grid with a single dimensional array
+            for(int firstRow = 0; firstRow < blanks.Length; firstRow++)
+            {
+                blanks[firstRow] = ' ';
+            }
+
             for (int column = 0; column < HeightOfBoard; column++)
             {
-                DrawBlankSpacesInCell();
-                DrawBlankSpacesInCell();
+                DrawBlankSpacesInCell(blanks);
+                // populate the board with the updated moves from the Game.ApplyMove()
+                for(int secondRow = 0; secondRow < rowValue.Length; secondRow++)
+                {
+                    rowValue[secondRow] = moves[column, secondRow];
+                }
+                DrawBlankSpacesInCell(rowValue);
                 DrawBottomLinesOfCell();
 
             }

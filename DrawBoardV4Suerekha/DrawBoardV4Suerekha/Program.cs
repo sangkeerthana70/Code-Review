@@ -20,13 +20,10 @@ namespace DrawBoardV4Suerekha
             newGame.ApplyMove('X', 1);
             newGame.PrintGameState();
             newBoard.DrawGameBoard(newGame.GameState);
-            //newGame.ApplyMove('O', 1);
-            //newBoard.DrawGameBoard(newGame.GameState);
-
-            foreach (var cell in newGame.GameState)
-            {
-                Console.Write(cell);
-            }
+            newGame.ApplyMove('O', 1);
+            newBoard.DrawGameBoard(newGame.GameState);
+            newGame.ApplyMove('X', 2);
+            newBoard.DrawGameBoard(newGame.GameState);
         }
     }
 }
